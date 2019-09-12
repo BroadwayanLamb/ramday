@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+
+<html>
+	<style>
+		td {
+			padding: 5px;
+		}
+		
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		
+		#container {
+			min-height: 100%;
+			position: relative;
+		}
+		
+		.center, .center-v, .center-h {
+			position: absolute;
+			display: inline-block;
+		}
+		
+		.center-v, .center {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+		
+		.center-h, .center {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		
+		.center {
+			transform: translate(-50%, -50%);
+		}
+		
+		#form {
+			padding: 5px;
+		}
+		
+		#main {
+			border: solid black 2px;
+			padding: 20px;
+		}
+		
+	</style>
+<head>
+</head>
+
+<body>
+	<div id="container">
+	<div id="main" class="center">
+		<h1>Thank you for signing up for Computer Science Club</h1>
+		<p>Click <a href="/"> here to return</a></p>
+		<p id="counter"></p>
+		<script>
+			var count = 10;
+			var counter = document.getElementById("counter");
+			counter.count = function (x) {
+				counter.innerHTML = "Automatically returning in " + x + " second" + (x == 1 ? "" : "s");
+			};
+			counter.count(count);
+			setInterval(function() {
+				count -= 1;
+				if (count <= 0){
+					window.location.href = "/";
+				} else {
+					counter.count(count);
+				}
+			}, 1000);
+		</script>
+	</div>
+	</div>
+</body>
+
+</html>
