@@ -37,6 +37,12 @@
 			transform: translate(-50%, -50%);
 		}
 		
+		#container {
+			background-image: url("https://static.kent.ac.uk/nexus/ems/50.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		
 		#form {
 			padding: 5px;
 		}
@@ -44,6 +50,11 @@
 		#main {
 			border: solid black 2px;
 			padding: 20px;
+			background-color: rgba(255, 255, 255, .9)
+		}
+		
+		#form_table input {
+			min-width: 16em;
 		}
 		
 	</style>
@@ -56,7 +67,7 @@
 		<br/>
 		<div id="form">
 		<form name="signup" action="/" method="post">
-			<table>
+			<table id="form_table">
 			
 				<tr>
 					<td>
@@ -81,7 +92,7 @@
 						<label for="grade">Grade</label>
 					</td>
 					<td>
-						<select id="grade"/>
+						<select id="grade" name="grade"/>
 							<option>9</option>
 							<option>10</option>
 							<option>11</option>
