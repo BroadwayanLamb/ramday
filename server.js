@@ -11,7 +11,7 @@ http.createServer(function (req, res) {
 	
 	if (req.method == "GET") {
 		fio.readFile("index.html", function(err, data) {
-			res.write(data);
+			res.write(data + "");
 			res.end();
 		});
 	} else if (req.method == "POST") {
@@ -25,7 +25,7 @@ http.createServer(function (req, res) {
 		req.on("end", function() {
 			var form = qs.parse(body);
 			fio.readFile("success.html", function(err, data) {
-				res.write(data);
+				res.write(data + "");
 				res.end();
 			});
 			
